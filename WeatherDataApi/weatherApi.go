@@ -12,13 +12,13 @@ func GetData(location string) string {
 		return ""
 	}
 
-	url := "https://community-open-weather-map.p.rapidapi.com/find?type=link%252C%20accurate&units=imperial%252C%20metric&q=" + location
+	url := "https://community-open-weather-map.p.rapidapi.com/find?type=link%252C%20accurate&units=mecric%252C%20metric&q=" + location
 
 	req, error := http.NewRequest("GET", url, nil)
 	checkError(error)
 
 	req.Header.Add("x-rapidapi-host", "community-open-weather-map.p.rapidapi.com")
-	req.Header.Add("x-rapidapi-key", "*********************")
+	req.Header.Add("x-rapidapi-key", "****************")
 
 	res, error := http.DefaultClient.Do(req)
 	checkError(error)
